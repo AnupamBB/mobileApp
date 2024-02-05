@@ -1674,6 +1674,13 @@
     "prompts" "^2.4.2"
     "semver" "^7.5.2"
 
+"@react-native-community/datetimepicker@^7.6.2":
+  "integrity" "sha512-ogZnvCmNG/lGHhEQypqz/mPymiIWD5jv6uKczg/l/aWgiKs1RDPQH1abh+R0I26aKoXmgamJJPuXKeC5eRWtZg=="
+  "resolved" "https://registry.npmjs.org/@react-native-community/datetimepicker/-/datetimepicker-7.6.2.tgz"
+  "version" "7.6.2"
+  dependencies:
+    "invariant" "^2.2.4"
+
 "@react-native/assets-registry@0.73.1":
   "integrity" "sha512-2FgAbU7uKM5SbbW9QptPPZx8N9Ke2L7bsHb+EhAanZjFZunA9PaYtyjUQ1s7HD+zDVqOQIvjkpXSv7Kejd2tqg=="
   "resolved" "https://registry.npmjs.org/@react-native/assets-registry/-/assets-registry-0.73.1.tgz"
@@ -2010,6 +2017,15 @@
   "integrity" "sha512-ga8y9v9uyeiLdpKddhxYQkxNDrfvuPrlFb0N1qnZZByvcElJaXthF1UhvCh9TLWJBEHeNtdnbysW7Y6Uq8CVng=="
   "resolved" "https://registry.npmjs.org/@types/prop-types/-/prop-types-15.7.11.tgz"
   "version" "15.7.11"
+
+"@types/react-native-datepicker@^1.7.6":
+  "integrity" "sha512-CwcCBpaz3TINH2XbEdKCf+bd6dv/u2kRDapyC9BB/g/b0bfvidRxeWGV1sH8HeGr9e005o8U9UvyenOfIr9cqA=="
+  "resolved" "https://registry.npmjs.org/@types/react-native-datepicker/-/react-native-datepicker-1.7.6.tgz"
+  "version" "1.7.6"
+  dependencies:
+    "@types/react" "*"
+    "moment" ">=2.14.0"
+    "react-native" "*"
 
 "@types/react-test-renderer@^18.0.0":
   "integrity" "sha512-1+ANPOWc6rB3IkSnElhjv6VLlKg2dSv/OWClUyZimbLsQyBn8Js9Vtdsi3UICJ2rIQ3k2la06dkB+C92QfhKmg=="
@@ -5048,6 +5064,11 @@
   "resolved" "https://registry.npmjs.org/mkdirp/-/mkdirp-1.0.4.tgz"
   "version" "1.0.4"
 
+"moment@>=2.14.0":
+  "integrity" "sha512-uEmtNhbDOrWPFS+hdjFCBfy9f2YoyzRpwcl+DqpC6taX21FzsTLQVbMV/W7PzNSX6x/bhC1zA3c2UQ5NzH6how=="
+  "resolved" "https://registry.npmjs.org/moment/-/moment-2.30.1.tgz"
+  "version" "2.30.1"
+
 "ms@2.0.0":
   "integrity" "sha512-Tpp60P6IUJDTuOq/5Z8cdskzJujfwqfOTkrwIwj7IRISpnkJnT6SyJ4PCPnGMoFjC9ddhal5KVIYtAt97ix05A=="
   "resolved" "https://registry.npmjs.org/ms/-/ms-2.0.0.tgz"
@@ -5570,6 +5591,13 @@
   "resolved" "https://registry.npmjs.org/react-is/-/react-is-17.0.2.tgz"
   "version" "17.0.2"
 
+"react-native-element-dropdown@^2.10.1":
+  "integrity" "sha512-7J3K6T1LZo5H2rsEdAPpYDwhgog4UvatFq8bsW3dCrd2oyXiftn83gcQP1NKRYl4QMyb4WCMXIf+FqmZzS4o/Q=="
+  "resolved" "https://registry.npmjs.org/react-native-element-dropdown/-/react-native-element-dropdown-2.10.1.tgz"
+  "version" "2.10.1"
+  dependencies:
+    "lodash" "^4.17.21"
+
 "react-native-safe-area-context@^4.9.0":
   "integrity" "sha512-/OJD9Pb8IURyvn+1tWTszWPJqsbZ4hyHBU9P0xhOmk7h5owSuqL0zkfagU0pg7Vh0G2NKQkaPpUKUMMCUMDh/w=="
   "resolved" "https://registry.npmjs.org/react-native-safe-area-context/-/react-native-safe-area-context-4.9.0.tgz"
@@ -5583,7 +5611,7 @@
     "react-freeze" "^1.0.0"
     "warn-once" "^0.1.0"
 
-"react-native@^0.73.3":
+"react-native@*", "react-native@^0.73.3":
   "integrity" "sha512-RSQDtT2DNUcmB4IgmW9NhRb5wqvXFl6DI2NEJmt0ps2OrVHpoA8Tkq+lkFOA/fvPscJKtFKEHFBDSR5UHR3PUw=="
   "resolved" "https://registry.npmjs.org/react-native/-/react-native-0.73.3.tgz"
   "version" "0.73.3"
