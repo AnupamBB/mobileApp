@@ -10,11 +10,13 @@ const RegistrationNav = (props: any) => {
   );
 };
 
+
+
 export default RegistrationNav;
 
 const styles = StyleSheet.create({
   container: {
-    width: '80%',
+    // width: '80%',
     alignItems: 'center',
     justifyContent: 'center',
     height: 72,

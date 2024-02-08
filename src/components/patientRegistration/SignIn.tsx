@@ -34,7 +34,7 @@ const styles = StyleSheet.create({
   container: {
     alignItems: 'center',
     paddingHorizontal: 20,
-    backgroundColor: '#F3F7F6ff',
+    // backgroundColor: '#F3F7F6ff',
   },
   headerContainer: {
     alignItems: 'center',

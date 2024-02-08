@@ -7,27 +7,19 @@ import { Dropdown } from 'react-native-element-dropdown';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { RootStackParamList } from '../../App';
 
-type RegistrationProps = NativeStackScreenProps<RootStackParamList, 'Registration'>
+type SurgeryDetailsProps = NativeStackScreenProps<RootStackParamList, 'SurgeryDetails'>
 
-const genderData = [
-  { label: 'male', gender: '1' },
-  { label: 'female', gender: '2' },
-  { label: 'others', gender: '3' },
-];
-const bloodData = [
-  { label: 'A+', blood: '1' },
-  { label: 'B+', blood: '2' },
-  { label: 'AB+', blood: '3' },
-  { label: '0-', blood: '4' },
-  { label: '0+', blood: '5' },
+const surgeryData = [
+  { label: 'Surgery1', surgery: '1' },
+  { label: 'Surgery2', surgery: '2' },
+  { label: 'Surgery3', surgery: '3' },
 ];
 
 
-const Registration = ({ navigation }: RegistrationProps) => {
+const SurgeryDetails = ({ navigation }: SurgeryDetailsProps) => {
   const [selectedDate, setSelectedDate] = useState(new Date());
   const [showDatePicker, setShowDatePicker] = useState(false);
-  const [gender, setGender] = useState(null);
-  const [blood, setBlood] = useState(null);
+  const [surgery, setSurgery] = useState(null);
 
 
   const handleDateChange = (event : any, date : any) => {
@@ -41,19 +33,30 @@ const Registration = ({ navigation }: RegistrationProps) => {
     <View style={styles.container}>
       <ScrollView contentContainerStyle={styles.scrollViewContainer} showsVerticalScrollIndicator={false}>
       <View style={styles.containerHeading}>
-        <Text style={styles.inputHeading}>First Name</Text>
+        <Text style={styles.inputHeading}>Surgery</Text>
+      </View>
+      <View style={styles.dropdowncontainer}>
+        <Dropdown
+          style={styles.dropdown}
+          data={surgeryData}
+          // search
+          maxHeight={300}
+          labelField="label"
+          valueField="surgery"
+          placeholder="Select Surgery"
+          searchPlaceholder="Search..."
+          value={surgery}
+          onChange={(item: { label: any; surgery: any }) => {
+            setSurgery(item.surgery);
+          }}
+        />
+      </View>
+      <View style={styles.containerHeading}>
+        <Text style={styles.inputHeading}>Current Stage</Text>
       </View>
       <TextInput style={styles.input} />
       <View style={styles.containerHeading}>
-        <Text style={styles.inputHeading}>Last Name</Text>
-      </View>
-      <TextInput style={styles.input} />
-      <View style={styles.containerHeading}>
-        <Text style={styles.inputHeading}>Email</Text>
-      </View>
-      <TextInput style={styles.input} />
-      <View style={styles.containerHeading}>
-        <Text style={styles.inputHeading}>Date of Birth</Text>
+        <Text style={styles.inputHeading}>Surgery Date</Text>
       </View>
       <View style={styles.calendarContainer}>
         <Text style={styles.dateInput}>{selectedDate.toLocaleDateString()}</Text>
@@ -69,53 +72,11 @@ const Registration = ({ navigation }: RegistrationProps) => {
           onChange={handleDateChange}
         />
       )}
-      <View style={styles.containerHeading}>
-        <Text style={styles.inputHeading}>Gender</Text>
-      </View>
-      <View style={styles.dropdowncontainer}>
-        <Dropdown
-          style={styles.dropdown}
-          data={genderData}
-          // search
-          maxHeight={300}
-          labelField="label"
-          valueField="gender"
-          placeholder="Select Gender"
-          searchPlaceholder="Search..."
-          value={gender}
-          onChange={(item: { label: any; gender: any }) => {
-            setGender(item.gender);
-          }}
-        />
-      </View>
-      <View style={styles.containerHeading}>
-        <Text style={styles.inputHeading}>Blood Group</Text>
-      </View>
-      <View style={styles.dropdowncontainer}>
-        <Dropdown
-          style={styles.dropdown}
-          data={bloodData}
-          // search
-          maxHeight={300}
-          labelField="label"
-          valueField="blood"
-          placeholder="Select Blood Group"
-          searchPlaceholder="Search..."
-          value={blood}
-          onChange={(item: { label: any; blood: any }) => {
-            setBlood(item.blood);
-          }}
-        />
-      </View>
-      <View style={styles.containerHeading}>
-        <Text style={styles.inputHeading}>city</Text>
-      </View>
-      <TextInput style={styles.cityInput} />
       </ScrollView>
       <TouchableOpacity
-      onPress={() => navigation.navigate('CareSupport') }
+      onPress={() => navigation.navigate('SurgeryDetails') }
        style={styles.buttonContainer}>
-        <Text style={styles.buttonText}>Save & Next</Text>
+        <Text style={styles.buttonText}>Finish</Text>
         <Image source={require('../../../assets/photos/arrow.png')}/>
       </TouchableOpacity>
     </View>
@@ -256,4 +217,4 @@ const styles = StyleSheet.create({
     },
 });
 
-export default Registration;
+export default SurgeryDetails;
