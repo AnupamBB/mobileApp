@@ -1,12 +1,23 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet, Image, ScrollView} from 'react-native';
 import { Dropdown } from 'react-native-element-dropdown';
+import { useRoute } from '@react-navigation/native';
 
 //navigator
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { RootStackParamList } from '../../App';
 
-type CareSupportProps = NativeStackScreenProps<RootStackParamList, 'CareSupport'>
+type CareSupportProps = NativeStackScreenProps<RootStackParamList>
+interface RegistrationData {
+  firstName: string;
+  lastName: string;
+  email: string;
+  dateOfBirth: Date;
+  gender: string;
+  bloodGroup: string;
+  city: string;
+}
+
 
 const hospitalData = [
   { label: 'Apollo', hospital: '1' },
@@ -26,6 +37,9 @@ const CareSupport = ({ navigation }: CareSupportProps) => {
   const [hospital, setHospital] = useState(null);
   const [city, setCity] = useState(null);
 
+  const route = useRoute();
+  // Type assertion to ensure route.params has the correct type
+  const registrationData = route.params as RegistrationData;
 
   return (
     <View style={styles.container}>
@@ -90,10 +104,14 @@ const CareSupport = ({ navigation }: CareSupportProps) => {
       <TextInput style={styles.nurseInput} placeholder="+91" keyboardType="phone-pad" />
       </ScrollView>
       <TouchableOpacity
-      onPress={() => navigation.navigate('SurgeryDetails') }
-       style={styles.buttonContainer}>
+        onPress={() => {console.log(registrationData);
+          navigation.navigate('SurgeryDetails', {
+            registrationData,
+        } as never);}}
+        style={styles.buttonContainer}
+        >
         <Text style={styles.buttonText}>Next</Text>
-        <Image source={require('../../../assets/photos/arrow.png')}/>
+        <Image source={require('../../../assets/photos/arrow.png')} />
       </TouchableOpacity>
     </View>
   );

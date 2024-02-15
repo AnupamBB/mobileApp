@@ -6,29 +6,58 @@ import { Dropdown } from 'react-native-element-dropdown';
 //navigator
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { RootStackParamList } from '../../App';
+// import { useNavigation } from '@react-navigation/native';
 
-type RegistrationProps = NativeStackScreenProps<RootStackParamList, 'Registration'>
+
+// const navigation = useNavigation<Registration<any>>();
+type RegistrationProps = NativeStackScreenProps<RootStackParamList>
 
 const genderData = [
-  { label: 'male', gender: '1' },
-  { label: 'female', gender: '2' },
-  { label: 'others', gender: '3' },
+  { label: 'male', gender: 'male' },
+  { label: 'female', gender: 'female' },
+  { label: 'others', gender: 'others' },
 ];
 const bloodData = [
-  { label: 'A+', blood: '1' },
-  { label: 'B+', blood: '2' },
-  { label: 'AB+', blood: '3' },
-  { label: '0-', blood: '4' },
-  { label: '0+', blood: '5' },
+  { label: 'A+', blood: 'A+' },
+  { label: 'B+', blood: 'B+' },
+  { label: 'AB+', blood: 'AB+' },
+  { label: '0-', blood: '0-' },
+  { label: '0+', blood: '0+' },
 ];
 
 
 const Registration = ({ navigation }: RegistrationProps) => {
   const [selectedDate, setSelectedDate] = useState(new Date());
   const [showDatePicker, setShowDatePicker] = useState(false);
-  const [gender, setGender] = useState(null);
-  const [blood, setBlood] = useState(null);
+  const [gender, setGender] = useState('');
+  const [blood, setBlood] = useState('');
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
+  const [email, setEmail] = useState('');
+  const [city, setCity] = useState('');
 
+
+    // Function to handle input changes
+
+    const handleInputChange = (field : any, value: any) => {
+      switch (field) {
+        case 'firstName':
+          setFirstName(value);
+          break;
+        case 'lastName':
+          setLastName(value);
+          break;
+        case 'email':
+          setEmail(value);
+          break;
+        case 'city':
+          setCity(value);
+          break;
+        // Add cases for other fields as needed
+        default:
+          break;
+      }
+    };
 
   const handleDateChange = (event : any, date : any) => {
     if (date !== undefined) {
@@ -37,21 +66,45 @@ const Registration = ({ navigation }: RegistrationProps) => {
     setShowDatePicker(false);
   };
 
+  const nextpage = () =>{
+    navigation.navigate('CareSupport', {
+      firstName: firstName,
+      lastName: lastName,
+      email: email,
+      dateOfBirth: selectedDate,
+      gender: gender,
+      bloodGroup: blood,
+      city: city,
+    } as never);
+  };
+
   return (
     <View style={styles.container}>
       <ScrollView contentContainerStyle={styles.scrollViewContainer} showsVerticalScrollIndicator={false}>
       <View style={styles.containerHeading}>
         <Text style={styles.inputHeading}>First Name</Text>
       </View>
-      <TextInput style={styles.input} />
+      <TextInput
+          style={styles.input}
+          value={firstName}
+          onChangeText={(value) => handleInputChange('firstName', value)}
+        />
       <View style={styles.containerHeading}>
         <Text style={styles.inputHeading}>Last Name</Text>
       </View>
-      <TextInput style={styles.input} />
+      <TextInput
+          style={styles.input}
+          value={lastName}
+          onChangeText={(value) => handleInputChange('lastName', value)}
+        />
       <View style={styles.containerHeading}>
         <Text style={styles.inputHeading}>Email</Text>
       </View>
-      <TextInput style={styles.input} />
+      <TextInput
+          style={styles.input}
+          value={email}
+          onChangeText={(value) => handleInputChange('email', value)}
+        />
       <View style={styles.containerHeading}>
         <Text style={styles.inputHeading}>Date of Birth</Text>
       </View>
@@ -110,13 +163,18 @@ const Registration = ({ navigation }: RegistrationProps) => {
       <View style={styles.containerHeading}>
         <Text style={styles.inputHeading}>city</Text>
       </View>
-      <TextInput style={styles.cityInput} />
+      <TextInput
+          style={styles.input}
+          value={city}
+          onChangeText={(value) => handleInputChange('city', value)}
+        />
       </ScrollView>
       <TouchableOpacity
-      onPress={() => navigation.navigate('CareSupport') }
-       style={styles.buttonContainer}>
+      onPress={nextpage}
+        style={styles.buttonContainer}
+      >
         <Text style={styles.buttonText}>Save & Next</Text>
-        <Image source={require('../../../assets/photos/arrow.png')}/>
+        <Image source={require('../../../assets/photos/arrow.png')} />
       </TouchableOpacity>
     </View>
   );
