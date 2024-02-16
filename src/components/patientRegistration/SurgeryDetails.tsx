@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet, Image, ScrollView} from 'react-native';
 import DateTimePicker from '@react-native-community/datetimepicker';
 import { Dropdown } from 'react-native-element-dropdown';
+import { useRoute } from '@react-navigation/native';
 
 //navigator
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
@@ -9,10 +10,26 @@ import { RootStackParamList } from '../../App';
 
 type SurgeryDetailsProps = NativeStackScreenProps<RootStackParamList, 'SurgeryDetails'>
 
+interface CareSupportData {
+  doctor: string;
+  doctorNumber: string;
+  nurse: string;
+  nurseNumber: string;
+  doctorSpeciality: string;
+  hospital :string;
+  city: string;
+  firstName: string;
+  lastName: string;
+  email: string;
+  dateOfBirth: Date;
+  gender: string;
+  bloodGroup: string;
+}
+
 const surgeryData = [
-  { label: 'Surgery1', surgery: '1' },
-  { label: 'Surgery2', surgery: '2' },
-  { label: 'Surgery3', surgery: '3' },
+  { label: 'Surgery1', surgery: 'Surgery1' },
+  { label: 'Surgery2', surgery: 'Surgery2' },
+  { label: 'Surgery3', surgery: 'Surgery3' },
 ];
 
 
@@ -20,13 +37,37 @@ const SurgeryDetails = ({ navigation }: SurgeryDetailsProps) => {
   const [selectedDate, setSelectedDate] = useState(new Date());
   const [showDatePicker, setShowDatePicker] = useState(false);
   const [surgery, setSurgery] = useState(null);
-
+  const route = useRoute();
+  // Type assertion to ensure route.params has the correct type
+  const userData = route.params as CareSupportData;
 
   const handleDateChange = (event : any, date : any) => {
     if (date !== undefined) {
       setSelectedDate(date);
     }
     setShowDatePicker(false);
+  };
+
+  const finish = () =>{
+    handleProposalSubmission();
+    navigation.navigate('SurgeryDetails');
+  };
+
+
+  const handleProposalSubmission = async () => {
+    const registrationInfo = {
+      userData,
+      selectedDate : selectedDate,
+      surgery : surgery,
+    };
+
+    await fetch('https://digiomedapp-default-rtdb.firebaseio.com/RegistrationFormData.json', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(registrationInfo),
+    });
   };
 
   return (
@@ -74,7 +115,7 @@ const SurgeryDetails = ({ navigation }: SurgeryDetailsProps) => {
       )}
       </ScrollView>
       <TouchableOpacity
-      onPress={() => navigation.navigate('SurgeryDetails') }
+      onPress={finish}
        style={styles.buttonContainer}>
         <Text style={styles.buttonText}>Finish</Text>
         <Image source={require('../../../assets/photos/arrow.png')}/>

@@ -18,28 +18,44 @@ interface RegistrationData {
   city: string;
 }
 
+class CareSupportData {
+	doctor: string = '';
+	doctorNumber: string = '';
+	nurse: string = '';
+	nurseNumber: string = '';
+	doctorSpeciality: string = '';
+	hospital: string = '';
+	city: string = '';
+}
 
 const hospitalData = [
-  { label: 'Apollo', hospital: '1' },
-  { label: 'Name Care', hospital: '2' },
-  { label: 'GMC', hospital: '3' },
+  { label: 'Apollo', hospital: 'Apollo'},
+  { label: 'Name Care',hospital: 'Name Care'},
+  { label: 'GMC', hospital: 'GMC'},
 ];
 const cityData = [
-  { label: 'Bangaluru', city: '1' },
-  { label: 'Hyderabad', city: '2' },
-  { label: 'Chennai', city: '3' },
-  { label: 'Pune', city: '4' },
-  { label: 'Delhi', city: '5' },
+  { label: 'Bangaluru', city: 'Bangaluru' },
+  { label: 'Hyderabad', city: 'Hyderabad' },
+  { label: 'Chennai', city: 'Chennai' },
+  { label: 'Pune', city: 'Pune' },
+  { label: 'Delhi', city: 'Delhi' },
 ];
 
 
 const CareSupport = ({ navigation }: CareSupportProps) => {
-  const [hospital, setHospital] = useState(null);
-  const [city, setCity] = useState(null);
 
   const route = useRoute();
   // Type assertion to ensure route.params has the correct type
   const registrationData = route.params as RegistrationData;
+  const [careSupportData, setCareSupportData] = useState<CareSupportData>(new CareSupportData());
+
+  const nextpage = () =>{
+    console.log(careSupportData);
+    navigation.navigate('SurgeryDetails', {
+      registrationData,
+      careSupportData,
+    } as never);
+  };
 
   return (
     <View style={styles.container}>
@@ -57,9 +73,12 @@ const CareSupport = ({ navigation }: CareSupportProps) => {
           valueField="city"
           placeholder="Select City Group"
           searchPlaceholder="Search..."
-          value={city}
+          value={careSupportData.city}
           onChange={(item: { label: any; city: any }) => {
-            setCity(item.city);
+            setCareSupportData({
+              ...careSupportData,
+              city: item.city,
+            });
           }}
         />
       </View>
@@ -76,38 +95,86 @@ const CareSupport = ({ navigation }: CareSupportProps) => {
           valueField="hospital"
           placeholder="Select Hospital"
           searchPlaceholder="Search..."
-          value={hospital}
+          value={careSupportData.hospital}
           onChange={(item: { label: any; hospital: any }) => {
-            setHospital(item.hospital);
+            setCareSupportData({
+              ...careSupportData,
+              hospital: item.hospital,
+            });
           }}
         />
       </View>
       <View style={styles.containerHeading}>
         <Text style={styles.inputHeading}>Doctor</Text>
       </View>
-      <TextInput style={styles.input} />
+      <TextInput
+      style={styles.input}
+      value={careSupportData.doctor}
+      onChangeText={(value) => {
+        setCareSupportData({
+          ...careSupportData,
+          doctor: value,
+        });
+      }}
+      />
       <View style={styles.containerHeading}>
         <Text style={styles.inputHeading}>Doctor's Speciality</Text>
       </View>
-      <TextInput style={styles.input} />
+      <TextInput
+      style={styles.input}
+      value={careSupportData.doctorSpeciality}
+      onChangeText={(value) => {
+        setCareSupportData({
+          ...careSupportData,
+          doctorSpeciality: value,
+        });
+      }}
+       />
       <View style={styles.containerHeading}>
         <Text style={styles.inputHeading}>Doctor Phone</Text>
       </View>
-      <TextInput style={styles.input} placeholder="+91" keyboardType="phone-pad" />
+      <TextInput style={styles.input}
+      placeholder="+91"
+      keyboardType="phone-pad"
+      value={careSupportData.doctorNumber}
+      onChangeText={(value) => {
+        setCareSupportData({
+          ...careSupportData,
+          doctorNumber: value,
+        });
+      }}
+       />
       <View style={styles.containerHeading}>
         <Text style={styles.inputHeading}>Nurse </Text>
       </View>
-      <TextInput style={styles.input} />
+      <TextInput
+      style={styles.input}
+      value={careSupportData.nurse}
+      onChangeText={(value) => {
+        setCareSupportData({
+          ...careSupportData,
+          nurse: value,
+        });
+      }}
+      />
       <View style={styles.containerHeading}>
         <Text style={styles.inputHeading}>Nurse Phone</Text>
       </View>
-      <TextInput style={styles.nurseInput} placeholder="+91" keyboardType="phone-pad" />
+      <TextInput
+      style={styles.nurseInput}
+      placeholder="+91"
+      keyboardType="phone-pad"
+      value={careSupportData.nurseNumber}
+      onChangeText={(value) => {
+        setCareSupportData({
+          ...careSupportData,
+          nurseNumber: value,
+        });
+      }}
+      />
       </ScrollView>
       <TouchableOpacity
-        onPress={() => {console.log(registrationData);
-          navigation.navigate('SurgeryDetails', {
-            registrationData,
-        } as never);}}
+        onPress={nextpage}
         style={styles.buttonContainer}
         >
         <Text style={styles.buttonText}>Next</Text>

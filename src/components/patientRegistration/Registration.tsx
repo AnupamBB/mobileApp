@@ -6,7 +6,6 @@ import { Dropdown } from 'react-native-element-dropdown';
 //navigator
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { RootStackParamList } from '../../App';
-// import { useNavigation } from '@react-navigation/native';
 
 
 // const navigation = useNavigation<Registration<any>>();
@@ -25,56 +24,27 @@ const bloodData = [
   { label: '0+', blood: '0+' },
 ];
 
+class RegistrationData {
+	firstName: string = '';
+	lastName: string = '';
+	email: string = '';
+	city: string = '';
+	date: Date = new Date();
+	gender: string = '';
+	blood: string = '';
+}
+
 
 const Registration = ({ navigation }: RegistrationProps) => {
-  const [selectedDate, setSelectedDate] = useState(new Date());
   const [showDatePicker, setShowDatePicker] = useState(false);
-  const [gender, setGender] = useState('');
-  const [blood, setBlood] = useState('');
-  const [firstName, setFirstName] = useState('');
-  const [lastName, setLastName] = useState('');
-  const [email, setEmail] = useState('');
-  const [city, setCity] = useState('');
+  const [registrationData, setRegistrationData] = useState<RegistrationData>(new RegistrationData());
 
 
-    // Function to handle input changes
-
-    const handleInputChange = (field : any, value: any) => {
-      switch (field) {
-        case 'firstName':
-          setFirstName(value);
-          break;
-        case 'lastName':
-          setLastName(value);
-          break;
-        case 'email':
-          setEmail(value);
-          break;
-        case 'city':
-          setCity(value);
-          break;
-        // Add cases for other fields as needed
-        default:
-          break;
-      }
-    };
-
-  const handleDateChange = (event : any, date : any) => {
-    if (date !== undefined) {
-      setSelectedDate(date);
-    }
-    setShowDatePicker(false);
-  };
 
   const nextpage = () =>{
+    console.log(registrationData);
     navigation.navigate('CareSupport', {
-      firstName: firstName,
-      lastName: lastName,
-      email: email,
-      dateOfBirth: selectedDate,
-      gender: gender,
-      bloodGroup: blood,
-      city: city,
+      registrationData,
     } as never);
   };
 
@@ -86,42 +56,66 @@ const Registration = ({ navigation }: RegistrationProps) => {
       </View>
       <TextInput
           style={styles.input}
-          value={firstName}
-          onChangeText={(value) => handleInputChange('firstName', value)}
+          value={registrationData.firstName}
+          onChangeText={(value) => {
+            setRegistrationData({
+              ...registrationData,
+              firstName: value,
+            });
+          }}
         />
       <View style={styles.containerHeading}>
         <Text style={styles.inputHeading}>Last Name</Text>
       </View>
       <TextInput
           style={styles.input}
-          value={lastName}
-          onChangeText={(value) => handleInputChange('lastName', value)}
+          value={registrationData.lastName}
+          onChangeText={(value) => {
+            setRegistrationData({
+              ...registrationData,
+              lastName: value,
+            });
+          }}
         />
       <View style={styles.containerHeading}>
         <Text style={styles.inputHeading}>Email</Text>
       </View>
       <TextInput
           style={styles.input}
-          value={email}
-          onChangeText={(value) => handleInputChange('email', value)}
+          value={registrationData.email}
+          onChangeText={(value) => {
+            setRegistrationData({
+              ...registrationData,
+              email: value,
+            });
+          }}
         />
       <View style={styles.containerHeading}>
         <Text style={styles.inputHeading}>Date of Birth</Text>
       </View>
       <View style={styles.calendarContainer}>
-        <Text style={styles.dateInput}>{selectedDate.toLocaleDateString()}</Text>
+        <Text style={styles.dateInput}>{registrationData.date.toLocaleDateString()}</Text>
         <TouchableOpacity onPress={() => setShowDatePicker(true)} style={styles.calendarImageContainer}>
           <Image  source={require('../../../assets/photos/calendar.png')}/>
         </TouchableOpacity>
       </View>
       {showDatePicker && (
-        <DateTimePicker
-          value={selectedDate}
-          mode="date"
-          display="default"
-          onChange={handleDateChange}
-        />
-      )}
+          <DateTimePicker
+            value={registrationData.date}
+            mode="date"
+            display="default"
+            onChange={(event, selectedDate) => {
+              setShowDatePicker(false);
+              if (selectedDate) {
+                setRegistrationData({
+                  ...registrationData,
+                  date: selectedDate,
+                });
+              }
+            }}
+          />
+        )}
+
       <View style={styles.containerHeading}>
         <Text style={styles.inputHeading}>Gender</Text>
       </View>
@@ -135,9 +129,12 @@ const Registration = ({ navigation }: RegistrationProps) => {
           valueField="gender"
           placeholder="Select Gender"
           searchPlaceholder="Search..."
-          value={gender}
+          value={registrationData.gender}
           onChange={(item: { label: any; gender: any }) => {
-            setGender(item.gender);
+            setRegistrationData({
+              ...registrationData,
+              gender: item.gender,
+            });
           }}
         />
       </View>
@@ -154,9 +151,12 @@ const Registration = ({ navigation }: RegistrationProps) => {
           valueField="blood"
           placeholder="Select Blood Group"
           searchPlaceholder="Search..."
-          value={blood}
+          value={registrationData.blood}
           onChange={(item: { label: any; blood: any }) => {
-            setBlood(item.blood);
+            setRegistrationData({
+              ...registrationData,
+              blood: item.blood,
+            });
           }}
         />
       </View>
@@ -165,8 +165,13 @@ const Registration = ({ navigation }: RegistrationProps) => {
       </View>
       <TextInput
           style={styles.input}
-          value={city}
-          onChangeText={(value) => handleInputChange('city', value)}
+          value={registrationData.city}
+          onChangeText={(value) => {
+            setRegistrationData({
+              ...registrationData,
+              city: value,
+            });
+          }}
         />
       </ScrollView>
       <TouchableOpacity
