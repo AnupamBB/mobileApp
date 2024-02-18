@@ -1,23 +1,32 @@
 import React from 'react';
 import { Image, TouchableOpacity, StyleSheet } from 'react-native';
-
+// import { StatusBar } from 'react-native';
 // Navigation
 import { NavigationContainer, useNavigation } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-
-// Screens
 import SignIn from './components/patientRegistration/SignIn';
 import NumberVarification from './components/patientRegistration/NumberVarification';
 import RegistrationNav from './components/RegistrationNav';
 import Registration from './components/patientRegistration/Registration';
 import CareSupport from './components/patientRegistration/CareSupport';
 import SurgeryDetails from './components/patientRegistration/SurgeryDetails';
+import Home from './screens/Home';
+import Profile from './screens/Profile';
+import Support from './screens/Support';
+// import MyCare from './screens/MyCare';
+// import Temp from './components/common/Card';
+
+// const Stack = createNativeStackNavigator();
+
 
 export type RootStackParamList = {
   SignIn: undefined;
   NumberVarification: undefined;
   Registration: undefined;
   CareSupport: undefined;
+  Home: undefined;
+  Profile: undefined;
+  Support: undefined;
   SurgeryDetails: undefined;
 };
 
@@ -80,6 +89,23 @@ function App() {
           options={{
             headerTitle: () => <RegistrationNav heading='Surgery Details' subHeading='Care Information' />,
           }}
+        />
+        <Stack.Screen
+          name="Home"
+          component={Home}
+          options={{
+            headerShown: false,
+          }}
+        />
+        <Stack.Screen
+          name="Profile"
+          component={Profile}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="Support"
+          component={Support}
+          options={{ headerShown: false }}
         />
       </Stack.Navigator>
     </NavigationContainer>

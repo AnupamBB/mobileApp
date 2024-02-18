@@ -1,0 +1,1 @@
+export default ["Change Ostonomy pouch ", "Take medicines", "Go to Doctor"];

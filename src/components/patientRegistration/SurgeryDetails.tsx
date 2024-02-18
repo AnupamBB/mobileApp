@@ -50,7 +50,7 @@ const SurgeryDetails = ({ navigation }: SurgeryDetailsProps) => {
 
   const finish = () =>{
     handleProposalSubmission();
-    navigation.navigate('SurgeryDetails');
+    navigation.navigate('Home');
   };
 
 
