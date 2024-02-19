@@ -1,19 +1,19 @@
-import React from "react";
-import { StyleSheet, Text, View, ScrollView, ImageSourcePropType } from "react-native";
-import { Color, FontFamily, FontSize } from "../../GlobalStyles";
+import React from 'react';
+import { StyleSheet, Text, View, ScrollView } from 'react-native';
+import { Color, FontFamily, FontSize } from '../../GlobalStyles';
 
 // Importing Components
-import Header from "../components/common/Header";
-import Main from "../components/home/Main";
-import Backgroundlogo from "../components/common/backgroundlogo";
-import SupportCard from "../components/support/SupportCard";
-import Card from "../components/common/Card";
-import NavigationBar from "../components/common/BottomBar";
+import Header from '../components/common/Header';
+import Main from '../components/home/Main';
+import Backgroundlogo from '../components/common/backgroundlogo';
+import SupportCard from '../components/support/SupportCard';
+import Card from '../components/common/Card';
+import NavigationBar from '../components/common/BottomBar';
 
 // Importing DummyData
-import CommunityDetails from "../../dummyData/CommunityDetails";
-import YourEssentials from "../../dummyData/YourEssentials";
-import DoctorsDetails from "../../dummyData/DoctorsDetails";
+import CommunityDetails from '../../dummyData/CommunityDetails';
+import YourEssentials from '../../dummyData/YourEssentials';
+import DoctorsDetails from '../../dummyData/DoctorsDetails';
 
 
 // Support Screen
@@ -24,13 +24,13 @@ const Support: React.FC = () => {
         <Backgroundlogo top={-488} left={-360} />
         <View style={styles.contentContainer}>
           <Header
-            notificationBingIcon={require("../../assets/images/notificationbing.png")}
-            aiCoach={require("../../assets/images/ai-coach-1.png")}
-            Heading={"Help & Support"}
+            notificationBingIcon={require('../../assets/images/notificationbing.png')}
+            aiCoach={require('../../assets/images/ai-coach-1.png')}
+            Heading={'Help & Support'}
           />
           <Main
             paragraph="Get help with your day to day supplies, connect with community and get expert advice"
-            image={require("../../assets/images/image-17.png")}
+            image={require('../../assets/images/image-17.png')}
             image_Pos={{ width: 153, height: 151 }}
             padding={30}
           />
@@ -44,10 +44,10 @@ const Support: React.FC = () => {
                   key={index}
                   image={item.image}
                   Heading={item.Heading}
-                  Heading_Pos={"right"}
+                  Heading_Pos={'right'}
                   Tagline={item.Tagline}
-                  CardColor={"#E2F4F8"}
-                  arrowIcon={require("../../assets/images/arrow-button.png")}
+                  CardColor={'#E2F4F8'}
+                  arrowIcon={require('../../assets/images/arrow-button.png')}
                 />
               </View>
             ))}
@@ -71,7 +71,7 @@ const Support: React.FC = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#FBFAFF",
+    backgroundColor: '#FBFAFF',
   },
   scrollViewContent: {
     backgroundColor: Color.backgroundMobile,
@@ -84,18 +84,18 @@ const styles = StyleSheet.create({
   },
   sectionTitle: {
     fontFamily: FontFamily.mobile18ExtraBold,
-    fontWeight: "800",
+    fontWeight: '800',
     letterSpacing: 0.4,
     fontSize: FontSize.web18Medium_size,
-    textAlign: "left",
+    textAlign: 'left',
     color: Color.text,
     marginTop: 20,
   },
   cardContainer: {
-    flexDirection: "row",
-    justifyContent: "space-between",
+    flexDirection: 'row',
+    justifyContent: 'space-between',
     marginTop: 10,
-    flexWrap: "wrap",
+    flexWrap: 'wrap',
   },
 });
 

@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import {
   StyleSheet,
   Text,
@@ -7,8 +7,8 @@ import {
   Image,
   Pressable,
   ImageSourcePropType,
-} from "react-native";
-import { Color, Border, FontFamily, FontSize } from "../../../GlobalStyles";
+} from 'react-native';
+import { Color, Border, FontFamily, FontSize } from '../../../GlobalStyles';
 
 interface SupportCardItem {
   image: ImageSourcePropType;
@@ -45,7 +45,7 @@ const SupportCard: React.FC<SupportCardProps> = ({ data, heading }) => {
       <Pressable style={styles.arrowContainer}>
         <Image
           style={styles.arrowIcon}
-          source={require("../../../assets/images/arrowsmright.png")}
+          source={require('../../../assets/images/arrowsmright.png')}
         />
       </Pressable>
     </View>
@@ -58,7 +58,7 @@ const styles = StyleSheet.create({
     marginTop: 10,
     borderRadius: Border.br_xs,
     backgroundColor: Color.white,
-    shadowColor: "black",
+    shadowColor: 'black',
     shadowOffset: {
       width: 0,
       height: 1,
@@ -66,7 +66,7 @@ const styles = StyleSheet.create({
     shadowRadius: 4,
     elevation: 4,
     shadowOpacity: 1,
-    borderStyle: "solid",
+    borderStyle: 'solid',
     borderColor: Color.colorLavender_100,
     borderWidth: 1,
     padding: 10,
@@ -74,43 +74,43 @@ const styles = StyleSheet.create({
   headingText: {
     fontSize: FontSize.web14Regular_size,
     letterSpacing: -0.3,
-    fontWeight: "500",
-    color: "#8B8993",
+    fontWeight: '500',
+    color: '#8B8993',
   },
   scrollViewContent: {
     flexGrow: 1,
-    flexDirection: "row",
-    justifyContent: "space-around",
+    flexDirection: 'row',
+    justifyContent: 'space-around',
     margin: 10,
   },
   itemContainer: {
-    alignItems: "center",
+    alignItems: 'center',
   },
   itemImage: {
-    alignSelf: "center",
+    alignSelf: 'center',
   },
   itemName: {
     fontSize: FontSize.web14Regular_size,
-    fontWeight: "500",
+    fontWeight: '500',
     fontFamily: FontFamily.web18Medium,
     color: Color.text,
-    textAlign: "center",
+    textAlign: 'center',
   },
   itemDetails: {
-    textAlign: "center",
+    textAlign: 'center',
     fontSize: FontSize.mobile12SemiBold_size,
-    fontWeight: "600",
+    fontWeight: '600',
     fontFamily: FontFamily.mobile16Bold,
     color: Color.disabled,
     width: 80,
-    flexWrap: "wrap",
+    flexWrap: 'wrap',
   },
   arrowContainer: {
-    justifyContent: "center",
-    alignItems: "center",
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   arrowIcon: {
-    resizeMode: "cover",
+    resizeMode: 'cover',
   },
 });
 

@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import {
   StyleSheet,
   Text,
@@ -6,14 +6,14 @@ import {
   ScrollView,
   Image,
   Pressable,
-} from "react-native";
-import { Color, Border, FontFamily, FontSize } from "../../GlobalStyles";
+} from 'react-native';
+import { Color, Border, FontFamily, FontSize } from '../../GlobalStyles';
 
 // Importing Components
-import Header from "../components/common/Header";
-import Profile_Section from "../components/profile/Profile_Section";
-import Backgroundlogo from "../components/common/backgroundlogo";
-import NavigationBar from "../components/common/BottomBar";
+import Header from '../components/common/Header';
+import Profile_Section from '../components/profile/Profile_Section';
+import Backgroundlogo from '../components/common/backgroundlogo';
+import NavigationBar from '../components/common/BottomBar';
 
 // Profile Screen
 const Profile: React.FC = () => {
@@ -24,14 +24,14 @@ const Profile: React.FC = () => {
           <Backgroundlogo top={-488} left={-360} />
           <View style={styles.contentContainer}>
             <Header
-              notificationBingIcon={require("../../assets/images/notificationbing.png")}
-              aiCoach={require("../../assets/images/ai-coach-1.png")}
-              Heading={"Profile"}
+              notificationBingIcon={require('../../assets/images/notificationbing.png')}
+              aiCoach={require('../../assets/images/ai-coach-1.png')}
+              Heading={'Profile'}
             />
             <View style={styles.profileInfoContainer}>
               <Image
                 style={styles.profileImage}
-                source={require("../../assets/images/ellipse-19.png")}
+                source={require('../../assets/images/ellipse-19.png')}
               />
               <View style={styles.profileTextContainer}>
                 <Text style={styles.profileNameText}>Tom Lee</Text>
@@ -44,22 +44,22 @@ const Profile: React.FC = () => {
               <View style={styles.buttonContainer}>
                 <Pressable
                   style={styles.button}
-                  onPress={() => console.log("Product tour pressed")}
+                  onPress={() => console.log('Product tour pressed')}
                 >
                   <Text style={styles.buttonText}>Product tour</Text>
                   <Image
                     style={styles.buttonIcon}
-                    source={require("../../assets/images/arrowright1.png")}
+                    source={require('../../assets/images/arrowright1.png')}
                   />
                 </Pressable>
               </View>
               <Pressable
                 style={styles.logoutButton}
-                onPress={() => console.log("Logout pressed")}
+                onPress={() => console.log('Logout pressed')}
               >
                 <Image
                   style={styles.logoutIcon}
-                  source={require("../../assets/images/logout.png")}
+                  source={require('../../assets/images/logout.png')}
                 />
                 <Text style={styles.logoutText}>Logout</Text>
               </Pressable>
@@ -75,7 +75,7 @@ const Profile: React.FC = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#FBFAFF",
+    backgroundColor: '#FBFAFF',
   },
   mainContainer: {
     backgroundColor: Color.backgroundMobile,
@@ -86,7 +86,7 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   profileInfoContainer: {
-    flexDirection: "row",
+    flexDirection: 'row',
     marginLeft: 10,
     marginTop: 30,
   },
@@ -100,13 +100,13 @@ const styles = StyleSheet.create({
   },
   profileNameText: {
     fontSize: FontSize.mobile26ExtraBold_size,
-    fontWeight: "800",
+    fontWeight: '800',
     fontFamily: FontFamily.mobile18ExtraBold,
     color: Color.text,
   },
   profileDetailsText: {
     color: Color.subText,
-    fontWeight: "600",
+    fontWeight: '600',
     fontSize: FontSize.mobile16Bold_size,
     marginTop: 10,
   },
@@ -117,7 +117,7 @@ const styles = StyleSheet.create({
     height: 50,
     borderRadius: Border.br_xs,
     backgroundColor: Color.white,
-    shadowColor: "#efedf9",
+    shadowColor: '#efedf9',
     shadowOffset: {
       width: 0,
       height: 1,
@@ -125,25 +125,25 @@ const styles = StyleSheet.create({
     shadowRadius: 4,
     elevation: 4,
     shadowOpacity: 1,
-    borderStyle: "solid",
+    borderStyle: 'solid',
     borderColor: Color.colorLavender_100,
     borderWidth: 1,
     padding: 12,
     margin: 10,
   },
   button: {
-    flexDirection: "row",
-    justifyContent: "space-between",
+    flexDirection: 'row',
+    justifyContent: 'space-between',
   },
   buttonText: {
     fontSize: FontSize.web18Medium_size,
     letterSpacing: 0.4,
-    fontWeight: "700",
+    fontWeight: '700',
     color: Color.colorSlateblue_100,
   },
   buttonIcon: {
-    position: "relative",
-    alignSelf: "flex-end",
+    position: 'relative',
+    alignSelf: 'flex-end',
   },
   logoutButton: {
     borderRadius: Border.br_5xs,
@@ -151,7 +151,7 @@ const styles = StyleSheet.create({
     marginTop: 21,
     paddingVertical: 7,
     paddingHorizontal: 10,
-    flexDirection: "row",
+    flexDirection: 'row',
     marginLeft: 10,
     marginRight: 10,
   },
@@ -162,7 +162,7 @@ const styles = StyleSheet.create({
   logoutText: {
     marginLeft: 8,
     fontFamily: FontFamily.mobile16Bold,
-    fontWeight: "700",
+    fontWeight: '700',
     letterSpacing: 0.4,
     fontSize: FontSize.web18Medium_size,
     color: Color.text,

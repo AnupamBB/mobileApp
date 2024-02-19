@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View, Image } from 'react-native';
-// import { FontFamily, FontSize, Color, Border } from '../../../GlobalStyles';
+import { FontFamily, FontSize, Color, Border } from '../../../GlobalStyles';
 
 // Updates Component
 
@@ -31,10 +31,10 @@ const styles = StyleSheet.create({
   },
   contentText: {
     width: 319,
-    // fontFamily: FontFamily.mobile16Bold,
+    fontFamily: FontFamily.mobile16Bold,
     fontWeight: '600',
-    // fontSize: FontSize.mobile16Bold_size,
-    // color: Color.textMobile,
+    fontSize: FontSize.mobile16Bold_size,
+    color: Color.textMobile,
   },
   advertisementText: {
     alignSelf: 'flex-end',
@@ -43,17 +43,17 @@ const styles = StyleSheet.create({
   updatesImage: {
     marginTop: 20,
     width: 370,
-    // borderRadius: Border.br_xs,
+    borderRadius: Border.br_xs,
     height: 127,
     alignSelf: 'center',
     top: 0,
   },
   updatesText: {
     letterSpacing: 0.4,
-    // fontSize: FontSize.web18Medium_size,
+    fontSize: FontSize.web18Medium_size,
     textAlign: 'left',
-    // color: Color.text,
-    // fontFamily: FontFamily.mobile18ExtraBold,
+    color: Color.text,
+    fontFamily: FontFamily.mobile18ExtraBold,
     fontWeight: '800',
   },
 });

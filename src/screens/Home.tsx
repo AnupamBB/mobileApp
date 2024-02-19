@@ -1,6 +1,6 @@
 import React, { memo } from 'react';
 import { View, ScrollView, StyleSheet } from 'react-native';
-// import { Color } from '../../GlobalStyles';
+import { Color } from '../../GlobalStyles';
 
 // Importing Components
 import Backgroundlogo from '../components/common/backgroundlogo';
@@ -61,8 +61,8 @@ const Home: React.FC = memo(() => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    // backgroundColor: Color.backgroundMobile,
-    // borderColor: Color.text,
+    backgroundColor: Color.backgroundMobile,
+    borderColor: Color.text,
   },
   mainContainer: {
     flex: 1,

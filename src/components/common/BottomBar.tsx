@@ -30,7 +30,7 @@ const NavigationBar: React.FC<NavigationBarProps> = ({ route: initialRoute }) =>
       normal: require("../../../assets/images/home.png"),
       active: require("../../../assets/images/homefill.png"),
     },
-    "My Care": {
+    MyCare: {
       normal: require("../../../assets/images/bag-medicine-line.png"),
       active: require("../../../assets/images/bag-medicine-fill.png"),
     },
@@ -52,7 +52,7 @@ const NavigationBar: React.FC<NavigationBarProps> = ({ route: initialRoute }) =>
   return (
     <View>
       <View style={styles.navigationBar}>
-        {["Home", "My Care", "Support", "Profile"].map((screenName:string,index) => (
+        {["Home", "MyCare", "Support", "Profile"].map((screenName:string,index) => (
           <Pressable
             key={index}
             style={[

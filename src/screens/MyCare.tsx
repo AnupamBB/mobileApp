@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, StyleSheet, ScrollView } from 'react-native';
-// import { Color } from '../../GlobalStyles';
+import { Color } from '../../GlobalStyles';
 
 // Importing Components
 import Header from '../components/common/Header';
@@ -56,8 +56,8 @@ const styles = StyleSheet.create({
     backgroundColor: '#FBFAFF',
   },
   scrollContainer: {
-    // backgroundColor: Color.backgroundMobile,
-    // borderColor: Color.text,
+    backgroundColor: Color.backgroundMobile,
+    borderColor: Color.text,
     padding: 10,
     paddingTop: 0,
   },

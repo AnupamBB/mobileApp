@@ -1521,6 +1521,11 @@
     "@nodelib/fs.scandir" "2.1.5"
     "fastq" "^1.6.0"
 
+"@react-native-community/checkbox@^0.5.17":
+  "integrity" "sha512-ZZx/eOH3SIxBg+hvA2zRd7lX5zPQEWcZU8C8Dn7WLdpJkiTkPmIUDFHWrmzxCnwZcyoD+BIt6gUZPKGGb9WmeQ=="
+  "resolved" "https://registry.npmjs.org/@react-native-community/checkbox/-/checkbox-0.5.17.tgz"
+  "version" "0.5.17"
+
 "@react-native-community/cli-clean@12.3.2":
   "integrity" "sha512-90k2hCX0ddSFPT7EN7h5SZj0XZPXP0+y/++v262hssoey3nhurwF57NGWN0XAR0o9BSW7+mBfeInfabzDraO6A=="
   "resolved" "https://registry.npmjs.org/@react-native-community/cli-clean/-/cli-clean-12.3.2.tgz"

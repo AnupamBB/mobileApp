@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import {
   StyleSheet,
   Text,
@@ -7,11 +7,11 @@ import {
   Pressable,
   Image,
   ImageSourcePropType,
-} from "react-native";
-import { FontSize, FontFamily, Color, Border } from "../../../GlobalStyles";
+} from 'react-native';
+import { FontSize, FontFamily, Color, Border } from '../../../GlobalStyles';
 
 // Importing DummyData
-import questions from "../../../dummyData/CommonQuestion";
+import questions from '../../../dummyData/CommonQuestion';
 
 // BulletPoint Component
 const BulletPoint: React.FC = () => (
@@ -19,7 +19,7 @@ const BulletPoint: React.FC = () => (
     style={{
       color: Color.textMobile,
       fontFamily: FontFamily.mobile16Bold,
-      fontWeight: "600",
+      fontWeight: '600',
       fontSize: FontSize.mobile16Bold_size,
       marginBottom: 11,
       marginRight: 10,
@@ -47,7 +47,7 @@ const CommonQuestions: React.FC = () => {
           <Image
             style={[styles.icon, styles.iconLayout]}
             resizeMode="cover"
-            source={require("../../../assets/images/arrowsmright.png") as ImageSourcePropType}
+            source={require('../../../assets/images/arrowsmright.png') as ImageSourcePropType}
           />
         </Pressable>
       </View>
@@ -57,13 +57,13 @@ const CommonQuestions: React.FC = () => {
 
 const styles = StyleSheet.create({
   container: {
-    width: "100%",
-    backgroundColor: "white",
+    width: '100%',
+    backgroundColor: 'white',
   },
   titleText: {
     fontSize: FontSize.web18Medium_size,
     letterSpacing: 0.4,
-    fontWeight: "800",
+    fontWeight: '800',
     fontFamily: FontFamily.mobile18ExtraBold,
     color: Color.text,
   },
@@ -72,7 +72,7 @@ const styles = StyleSheet.create({
     marginTop: 10,
     borderRadius: Border.br_xs,
     backgroundColor: Color.white,
-    shadowColor: "black",
+    shadowColor: 'black',
     shadowOffset: {
       width: 0,
       height: 1,
@@ -80,24 +80,24 @@ const styles = StyleSheet.create({
     shadowRadius: 4,
     elevation: 4,
     shadowOpacity: 1,
-    borderStyle: "solid",
+    borderStyle: 'solid',
     borderColor: Color.colorLavender_100,
     borderWidth: 1,
     padding: 20,
   },
   bulletPointContainer: {
-    flexDirection: "row",
+    flexDirection: 'row',
   },
   questionText: {
     color: Color.textMobile,
     fontFamily: FontFamily.mobile16Bold,
-    fontWeight: "600",
+    fontWeight: '600',
     fontSize: FontSize.mobile16Bold_size,
     marginBottom: 11,
   },
   iconContainer: {
-    justifyContent: "center",
-    alignItems: "center",
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   icon: {
     height: 18,

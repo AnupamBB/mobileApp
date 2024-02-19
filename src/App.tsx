@@ -13,7 +13,7 @@ import SurgeryDetails from './components/patientRegistration/SurgeryDetails';
 import Home from './screens/Home';
 import Profile from './screens/Profile';
 import Support from './screens/Support';
-// import MyCare from './screens/MyCare';
+import MyCare from './screens/MyCare';
 // import Temp from './components/common/Card';
 
 // const Stack = createNativeStackNavigator();
@@ -28,6 +28,7 @@ export type RootStackParamList = {
   Profile: undefined;
   Support: undefined;
   SurgeryDetails: undefined;
+  MyCare: undefined;
 };
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -105,6 +106,11 @@ function App() {
         <Stack.Screen
           name="Support"
           component={Support}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="MyCare"
+          component={MyCare}
           options={{ headerShown: false }}
         />
       </Stack.Navigator>

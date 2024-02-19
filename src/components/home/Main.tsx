@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View, Image, ImageSourcePropType } from 'react-native';
-// import { FontFamily, FontSize, Color } from '../../../GlobalStyles';
+import { FontFamily, FontSize, Color } from '../../../GlobalStyles';
 
 interface MainProps {
   paragraph: string;
@@ -37,18 +37,18 @@ const styles = StyleSheet.create({
     flexWrap: 'wrap',
   },
   mainHeading: {
-    // fontSize: FontSize.mobile26ExtraBold_size,
+    fontSize: FontSize.mobile26ExtraBold_size,
     width: 169,
-    // color: Color.text,
+    color: Color.text,
     textAlign: 'left',
-    // fontFamily: FontFamily.mobile18ExtraBold,
+    fontFamily: FontFamily.mobile18ExtraBold,
     fontWeight: '800',
     marginBottom: 20,
   },
   paragraph: {
-    // fontSize: FontSize.mobile16Bold_size,
+    fontSize: FontSize.mobile16Bold_size,
     width: 174,
-    // fontFamily: FontFamily.mobile16Bold,
+    fontFamily: FontFamily.mobile16Bold,
     fontWeight: '600',
   },
   image: {

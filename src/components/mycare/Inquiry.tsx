@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import {
   StyleSheet,
   Text,
@@ -6,8 +6,8 @@ import {
   Image,
   ScrollView,
   TextInput,
-} from "react-native";
-import { Color, FontFamily, FontSize } from "../../../GlobalStyles";
+} from 'react-native';
+import { Color, FontFamily, FontSize } from '../../../GlobalStyles';
 
 // Inquiry Component
 const Inquiry: React.FC = () => {
@@ -17,7 +17,7 @@ const Inquiry: React.FC = () => {
       <View style={styles.inputContainer}>
         <Image
           style={styles.icon}
-          source={require("../../../assets/images/ellipse-8.png")}
+          source={require('../../../assets/images/ellipse-8.png')}
         />
         <View style={styles.textInputContainer}>
           <ScrollView>
@@ -30,15 +30,15 @@ const Inquiry: React.FC = () => {
           <View style={styles.iconContainer}>
             <Image
               style={styles.smileIcon}
-              source={require("../../../assets/images/smile-smile.png")}
+              source={require('../../../assets/images/smile-smile.png')}
             />
             <Image
               style={styles.attachIcon}
-              source={require("../../../assets/images/vuesaxoutlineattachcircle.png")}
+              source={require('../../../assets/images/vuesaxoutlineattachcircle.png')}
             />
             <Image
               style={styles.smileIcon}
-              source={require("../../../assets/images/vuesaxboldsend.png")}
+              source={require('../../../assets/images/vuesaxboldsend.png')}
             />
           </View>
         </View>
@@ -54,9 +54,9 @@ const styles = StyleSheet.create({
   },
   titleText: {
     color: Color.text,
-    textAlign: "left",
+    textAlign: 'left',
     fontFamily: FontFamily.mobile16Bold,
-    fontWeight: "700",
+    fontWeight: '700',
     letterSpacing: 0.4,
     fontSize: FontSize.web18Medium_size,
   },
@@ -71,11 +71,11 @@ const styles = StyleSheet.create({
       height: 1,
     },
     borderWidth: 1,
-    borderStyle: "solid",
-    shadowColor: "#efedf9",
+    borderStyle: 'solid',
+    shadowColor: '#efedf9',
     borderRadius: 10,
-    flexDirection: "row",
-    alignItems: "center",
+    flexDirection: 'row',
+    alignItems: 'center',
     padding: 10,
     marginTop: 5,
   },
@@ -87,11 +87,11 @@ const styles = StyleSheet.create({
     marginRight: 10,
   },
   textInputContainer: {
-    flexDirection: "row",
-    alignItems: "center",
+    flexDirection: 'row',
+    alignItems: 'center',
     borderRadius: 20,
-    borderColor: "#C5C5C5",
-    borderStyle: "solid",
+    borderColor: '#C5C5C5',
+    borderStyle: 'solid',
     borderWidth: 1,
     flex: 1,
     margin: 5,
@@ -105,8 +105,8 @@ const styles = StyleSheet.create({
     margin: 5,
   },
   iconContainer: {
-    flexDirection: "row",
-    alignItems: "center",
+    flexDirection: 'row',
+    alignItems: 'center',
     marginLeft: 10,
   },
   smileIcon: {

@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-// import { FontFamily, FontSize, Color } from '../../../GlobalStyles';
+import { FontFamily, FontSize, Color } from '../../../GlobalStyles';
 
 // Importing Component
 import Card from '../common/Card';
@@ -41,10 +41,10 @@ const styles = StyleSheet.create({
   },
   content: {
     letterSpacing: 0.4,
-    // fontSize: FontSize.web18Medium_size,
+    fontSize: FontSize.web18Medium_size,
     textAlign: 'left',
-    // color: Color.text,
-    // fontFamily: FontFamily.mobile18ExtraBold,
+    color: Color.text,
+    fontFamily: FontFamily.mobile18ExtraBold,
     fontWeight: '800',
   },
   cardContainer: {

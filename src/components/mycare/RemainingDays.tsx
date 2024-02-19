@@ -1,6 +1,6 @@
-import React from "react";
-import { StyleSheet, Text, View } from "react-native";
-import { FontFamily, Color, FontSize, Border } from "../../../GlobalStyles";
+import React from 'react';
+import { StyleSheet, Text, View } from 'react-native';
+import { FontFamily, Color, FontSize, Border } from '../../../GlobalStyles';
 
 // RemainingDays Component
 const RemainingDays: React.FC = () => {
@@ -24,30 +24,30 @@ const RemainingDays: React.FC = () => {
 
 const styles = StyleSheet.create({
   daysContainer: {
-    flexDirection: "row",
+    flexDirection: 'row',
     margin: 10,
   },
   daysText: {
     fontSize: 30,
-    fontWeight: "800",
+    fontWeight: '800',
     fontFamily: FontFamily.mobile18ExtraBold,
     color: Color.mobilePrimary,
   },
   toSurgeryText: {
     color: Color.text,
     fontFamily: FontFamily.mobile16Bold,
-    fontWeight: "700",
+    fontWeight: '700',
     letterSpacing: 0.4,
     fontSize: FontSize.web18Medium_size,
     marginTop: 12,
     marginLeft: 10,
   },
   surgeryTypeContainer: {
-    flexDirection: "row",
+    flexDirection: 'row',
     marginTop: 10,
   },
   preSurgeryButton: {
-    backgroundColor: "#5C49C5",
+    backgroundColor: '#5C49C5',
   },
   button: {
     flex: 1,
@@ -60,24 +60,24 @@ const styles = StyleSheet.create({
       height: 1,
     },
     borderWidth: 1,
-    borderStyle: "solid",
-    shadowColor: "#efedf9",
-    borderRadius: Border.br_xs, 
-    alignItems: "center",
-    justifyContent: "center",
+    borderStyle: 'solid',
+    shadowColor: '#efedf9',
+    borderRadius: Border.br_xs,
+    alignItems: 'center',
+    justifyContent: 'center',
     height: 40,
     marginHorizontal: 5,
   },
   postText: {
-    color: "black",
-    textAlign: "left",
+    color: 'black',
+    textAlign: 'left',
     fontFamily: FontFamily.mobile16Bold,
     letterSpacing: 0.4,
     fontSize: FontSize.web18Medium_size,
   },
   preText: {
-    color: "white",
-    textAlign: "left",
+    color: 'white',
+    textAlign: 'left',
     fontFamily: FontFamily.mobile16Bold,
     letterSpacing: 0.4,
     fontSize: FontSize.web18Medium_size,
