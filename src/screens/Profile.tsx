@@ -1,12 +1,7 @@
-import React from 'react';
-import {
-  StyleSheet,
-  Text,
-  View,
-  ScrollView,
-  Image,
-  Pressable,
-} from 'react-native';
+import React, { useEffect, useState } from 'react';
+import { get, ref } from 'firebase/database';
+import { database } from '../../firebaseConfig';
+import {StyleSheet,Text,View,ScrollView,Image,Pressable} from 'react-native';
 import { Color, Border, FontFamily, FontSize } from '../../GlobalStyles';
 
 // Importing Components
@@ -17,8 +12,28 @@ import NavigationBar from '../components/common/BottomBar';
 
 // Profile Screen
 const Profile: React.FC = () => {
+  const [profileData, setProfileData] = useState<{ id: string, [key: string]: any }[]>([]);
+
+  useEffect(() => {
+    const usersRef = ref(database, 'RegistrationFormData');
+    get(usersRef).then((snapshot) => {
+      if (snapshot.exists()) {
+        const usersArray: { id: string, [key: string]: any }[] = Object.entries(snapshot.val()).map(([id, data]) => ({
+          id,
+          data,
+        }));
+        setProfileData(usersArray);
+      } else {
+        console.log('no data available');
+      }
+    }).catch((error) => {
+      console.error(error);
+    });
+  }, []);
+
   return (
     <View style={styles.container}>
+      <View style={styles.container}>
       <ScrollView>
         <View style={styles.mainContainer}>
           <Backgroundlogo top={-488} left={-360} />
@@ -33,11 +48,13 @@ const Profile: React.FC = () => {
                 style={styles.profileImage}
                 source={require('../../assets/images/ellipse-19.png')}
               />
-              <View style={styles.profileTextContainer}>
-                <Text style={styles.profileNameText}>Tom Lee</Text>
-                <Text style={styles.profileDetailsText}>Male, 42yrs</Text>
-                <Text style={styles.profileDetailsText}>New York, USA</Text>
-              </View>
+              {profileData.map((user: any) => (
+                <View key={user.id} style={styles.profileTextContainer}>
+                  <Text style={styles.profileNameText}>{user.data.userData.registrationData.registrationData.firstName}</Text>
+                  <Text style={styles.profileDetailsText}>{user.data.userData.registrationData.registrationData.gender}</Text>
+                  <Text style={styles.profileDetailsText}>{user.data.userData.registrationData.registrationData.city}</Text>
+                </View>
+            ))}
             </View>
             <View style={styles.profileDetailsContainer}>
               <Profile_Section />
@@ -68,6 +85,7 @@ const Profile: React.FC = () => {
         </View>
       </ScrollView>
       <NavigationBar />
+    </View>
     </View>
   );
 };

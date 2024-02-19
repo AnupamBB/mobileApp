@@ -61,7 +61,7 @@ const SurgeryDetails = ({ navigation }: SurgeryDetailsProps) => {
       surgery : surgery,
     };
 
-    await fetch('https://digiomedapp-default-rtdb.firebaseio.com/RegistrationFormData.json', {
+    await fetch('https://digiomed-default-rtdb.firebaseio.com/RegistrationFormData.json', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
