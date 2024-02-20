@@ -12,7 +12,7 @@ const SignIn = ({navigation}: SignInProps) => {
   return (
     <View style={styles.container}>
       <ImageBackground source={require('../../../assets/photos/backgroundLogin.png')} style={styles.headerContainer}>
-      <Image source={require('../../../assets/photos/mainLogo.png')} style={styles.headerText} />
+      <Image source={require('../../../assets/images/logo.png')} style={styles.headerText} />
         <Image source={require('../../../assets/photos/logo.png')} style={styles.logo} />
       </ImageBackground>
       <Text style={styles.signInText}>Sign In/Sign Up</Text>
@@ -52,6 +52,9 @@ const styles = StyleSheet.create({
   },
   headerText: {
     position: 'relative',
+    width:124,
+    height:28,
+    marginTop:10,
     top: 32,
     left: -48,
   },

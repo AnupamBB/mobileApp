@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
-import { StyleSheet, Text, View, ScrollView } from 'react-native';
-import CheckBox from '@react-native-community/checkbox';
-import { FontFamily, FontSize, Color, Border } from '../../../GlobalStyles';
+import React, {useState} from 'react';
+import {StyleSheet, Text, View, ScrollView} from 'react-native';
+import {FontFamily, FontSize, Color, Border} from '../../../GlobalStyles';
+import BouncyCheckbox from 'react-native-bouncy-checkbox';
 
 // Importing DummyData
 import remindersData from '../../../dummyData/reminders';
@@ -14,7 +14,7 @@ const Reminders = () => {
   const handleCheckboxChange = (reminder: string) => {
     if (selectedReminder.includes(reminder)) {
       setSelectedReminder(
-        selectedReminder.filter((selected) => selected !== reminder)
+        selectedReminder.filter(selected => selected !== reminder),
       );
     } else {
       setSelectedReminder([...selectedReminder, reminder]);
@@ -30,17 +30,15 @@ const Reminders = () => {
           <View>
             {reminders.map((reminder, index) => (
               <View key={index} style={styles.reminderItem}>
-                <CheckBox
-                  disabled={false}
-                  value={selectedReminder.includes(reminder)}
-                  onValueChange={() => handleCheckboxChange(reminder)}
-                  tintColors={{
-                    true: Color.mobilePrimary,
-                    false: 'black',
-                  }}
-                  
+                <BouncyCheckbox
+                  size={25}
+                  fillColor={Color.mobilePrimary}
+                  unfillColor="#FFFFFF"
+                  textStyle={styles.reminderText}
+                  text={reminder}
+                  innerIconStyle={{borderWidth: 2}}
+                  onPress={(isChecked: boolean) => {}}
                 />
-                <Text style={styles.reminderText}>{reminder}</Text>
               </View>
             ))}
           </View>
@@ -79,7 +77,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     margin: 12,
     paddingLeft: 10,
-    alignItems:'center'
+    alignItems: 'center',
   },
   reminderText: {
     color: Color.textMobile,
