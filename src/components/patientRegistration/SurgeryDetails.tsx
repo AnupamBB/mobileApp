@@ -188,6 +188,7 @@ const styles = StyleSheet.create({
     borderColor: '#ddd',
     fontSize: 18,
     paddingLeft: 22,
+    color: '#151B17',
   },
   cityInput: {
     width: '100%',
@@ -202,6 +203,7 @@ const styles = StyleSheet.create({
     borderColor: '#ddd',
     fontSize: 18,
     paddingLeft: 22,
+    color: '#151B17',
   },
   dateInput: {
     width: '100%',
