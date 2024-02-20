@@ -12,8 +12,8 @@ const NumberVarification = ({navigation}: NumberVarificationProps) => {
     <View style={styles.container}>
       <Image source={require('../../../assets/photos/tick-circle.png')} style={styles.tickCircle} />
       <View style={styles.varificationsMessageContainer}>
-        <Text>6 digit verification code sent to</Text>
-        <Text>your mobile</Text>
+        <Text style={styles.varificationsMessage}>6 digit verification code sent to</Text>
+        <Text style={styles.varificationsMessage}>your mobile</Text>
       </View>
       <View style={styles.containerHeading}>
         <Text style={styles.inputHeading}>Mobile Number</Text>
@@ -55,6 +55,10 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginTop: 16,
     fontWeight: '500',
+    color: '#62606F',
+  },
+  varificationsMessage: {
+    fontFamily: 'Lato-Bold',
     color: '#62606F',
   },
   containerHeading: {
