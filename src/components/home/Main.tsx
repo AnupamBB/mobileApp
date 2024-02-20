@@ -50,6 +50,7 @@ const styles = StyleSheet.create({
     width: 174,
     fontFamily: FontFamily.mobile16Bold,
     fontWeight: '600',
+    color:'black'
   },
   image: {
     resizeMode: 'cover',

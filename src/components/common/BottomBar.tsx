@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { StyleSheet, Text, View, Pressable, Image, ImageStyle, TextStyle, ViewStyle } from "react-native";
-// import { Padding, Color, FontSize, FontFamily, Border } from "../../../GlobalStyles";
+import { Padding, Color, FontSize, FontFamily, Border } from "../../../GlobalStyles";
 import { useNavigation, useRoute, RouteProp } from "@react-navigation/native";
 
 interface NavigationBarProps {
@@ -87,18 +87,18 @@ const NavigationBar: React.FC<NavigationBarProps> = ({ route: initialRoute }) =>
 const styles = StyleSheet.create({
   parentSpaceBlock: {
     paddingVertical: 0,
-    // paddingHorizontal: Padding.p_7xs,
-    // backgroundColor: Color.white,
+    paddingHorizontal: Padding.p_7xs,
+    backgroundColor: Color.white,
   } as ViewStyle,
   bottomBarItemIcon: {
     width: 24,
     height: 24,
   } as ImageStyle,
   bottomBarItemText: {
-    // fontSize: FontSize.mobile10SemiBold_size,
+    fontSize: FontSize.mobile10SemiBold_size,
     fontWeight: "600",
-    // fontFamily: FontFamily.mobile16Bold,
-    // color: Color.label,
+    fontFamily: FontFamily.mobile16Bold,
+    color: Color.label,
     textAlign: "left",
     marginTop: 4,
   } as TextStyle,
@@ -106,7 +106,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     width: 56,
     paddingVertical: 0,
-    // paddingHorizontal: Padding.p_7xs,
+    paddingHorizontal: Padding.p_7xs,
     alignItems: "center",
     height: 56,
   } as ViewStyle,
@@ -118,7 +118,7 @@ const styles = StyleSheet.create({
     elevation: 2,
     shadowOpacity: 1,
     height: 56,
-    // backgroundColor: Color.white,
+    backgroundColor: Color.white,
     justifyContent: "space-around",
     flexDirection: "row",
   } as ViewStyle,

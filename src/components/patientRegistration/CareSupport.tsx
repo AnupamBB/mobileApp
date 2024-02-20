@@ -30,11 +30,11 @@ class CareSupportData {
 
 const hospitalData = [
   { label: 'Apollo', hospital: 'Apollo'},
-  { label: 'Name Care',hospital: 'Name Care'},
+  { label: 'Nemcare',hospital: 'Nemcare'},
   { label: 'GMC', hospital: 'GMC'},
 ];
 const cityData = [
-  { label: 'Bangaluru', city: 'Bangaluru' },
+  { label: 'Bengaluru', city: 'Bengaluru' },
   { label: 'Hyderabad', city: 'Hyderabad' },
   { label: 'Chennai', city: 'Chennai' },
   { label: 'Pune', city: 'Pune' },

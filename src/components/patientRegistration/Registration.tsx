@@ -12,16 +12,19 @@ import { RootStackParamList } from '../../App';
 type RegistrationProps = NativeStackScreenProps<RootStackParamList>
 
 const genderData = [
-  { label: 'male', gender: 'male' },
-  { label: 'female', gender: 'female' },
-  { label: 'others', gender: 'others' },
+  { label: 'Male', gender: 'male' },
+  { label: 'Female', gender: 'female' },
+  { label: 'Others', gender: 'others' },
 ];
 const bloodData = [
   { label: 'A+', blood: 'A+' },
+  { label: 'A-', blood: 'A-' },
   { label: 'B+', blood: 'B+' },
+  { label: 'B-', blood: 'B-' },
   { label: 'AB+', blood: 'AB+' },
-  { label: '0-', blood: '0-' },
-  { label: '0+', blood: '0+' },
+  { label: 'AB-', blood: 'AB-' },
+  { label: 'O+', blood: 'O+' },
+  { label: 'O-', blood: 'O-' },
 ];
 
 class RegistrationData {
