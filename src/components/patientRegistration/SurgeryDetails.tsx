@@ -61,7 +61,7 @@ const SurgeryDetails = ({ navigation }: SurgeryDetailsProps) => {
       surgery : surgery,
     };
 
-    await fetch('https://digiomedapp-default-rtdb.firebaseio.com/RegistrationFormData.json', {
+    await fetch('https://digiomed-default-rtdb.firebaseio.com/RegistrationFormData.json', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -233,7 +233,7 @@ const styles = StyleSheet.create({
     borderRadius: 50,
     marginVertical: 10,
     position: 'absolute',
-    bottom: 0,
+    bottom: 48,
   },
   buttonText: {
     fontSize: 18,

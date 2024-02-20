@@ -176,14 +176,14 @@ const Registration = ({ navigation }: RegistrationProps) => {
             });
           }}
         />
-      </ScrollView>
-      <TouchableOpacity
+        <TouchableOpacity
       onPress={nextpage}
         style={styles.buttonContainer}
       >
         <Text style={styles.buttonText}>Save & Next</Text>
         <Image source={require('../../../assets/photos/arrow.png')} />
       </TouchableOpacity>
+      </ScrollView>
     </View>
   );
 };
@@ -296,8 +296,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     borderRadius: 50,
     marginVertical: 10,
-    position: 'absolute',
-    bottom: 0,
+    marginBottom: 288,
   },
   buttonText: {
     fontSize: 18,
