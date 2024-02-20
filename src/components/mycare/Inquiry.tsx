@@ -20,7 +20,9 @@ const Inquiry: React.FC = () => {
           source={require('../../../assets/images/ellipse-8.png')}
         />
         <View style={styles.textInputContainer}>
-          <ScrollView>
+          <ScrollView 
+          contentContainerStyle={{flex:1}}
+          >
             <TextInput
               placeholder="your question..."
               style={styles.inputText}
@@ -102,7 +104,7 @@ const styles = StyleSheet.create({
     fontFamily: FontFamily.web14Regular,
     color: Color.gray3,
     flex: 1,
-    margin: 5,
+    
   },
   iconContainer: {
     flexDirection: 'row',

@@ -46,13 +46,14 @@ const Header: React.FC<HeaderProps> = ({
             style={{
               fontSize: FontSize.mobile26ExtraBold_size,
               fontFamily: FontFamily.mobile18ExtraBold,
+              color:'black'
             }}
           >
             {Heading}
           </Text>
         )}
       </View>
-      <View style={{ flexDirection: "row", alignItems: "center", marginLeft: 10,marginRight:10 }}>
+      <View style={{ flexDirection: "row", alignItems: "center", marginLeft: 10 }}>
         <View style={styles.notificationBingIcon}>
           <Image source={notificationBingIcon} />
         </View>
@@ -78,6 +79,7 @@ const styles = StyleSheet.create({
   header: {
     flexDirection: "row",
     justifyContent: "space-between",
+    
   },
   logo: {
     width: 124,

@@ -33,7 +33,7 @@ const BulletPoint: React.FC = () => (
 const CommonQuestions: React.FC = () => {
   return (
     <View style={styles.container}>
-      <Text style={styles.titleText}>Common Questions</Text>
+      <Text style={[styles.titleText]}>Common Questions</Text>
       <View style={styles.cardContainer}>
         <ScrollView>
           {questions.map((question, index) => (
@@ -94,6 +94,7 @@ const styles = StyleSheet.create({
     fontWeight: '600',
     fontSize: FontSize.mobile16Bold_size,
     marginBottom: 11,
+    marginRight:8
   },
   iconContainer: {
     justifyContent: 'center',

@@ -38,6 +38,7 @@ const Reminders = () => {
                     true: Color.mobilePrimary,
                     false: 'black',
                   }}
+                  
                 />
                 <Text style={styles.reminderText}>{reminder}</Text>
               </View>
@@ -78,6 +79,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     margin: 12,
     paddingLeft: 10,
+    alignItems:'center'
   },
   reminderText: {
     color: Color.textMobile,
