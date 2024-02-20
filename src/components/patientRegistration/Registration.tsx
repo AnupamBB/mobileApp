@@ -240,12 +240,6 @@ const styles = StyleSheet.create({
     fontWeight: '600',
     color: '#7d7c83',
   },
-  inputHeadingResendCode: {
-    fontFamily: 'Lato-Regular',
-    fontSize: 16,
-    fontWeight: '400',
-    color: '#0273E6',
-  },
   input: {
     width: '100%',
     height: 50,
@@ -258,6 +252,7 @@ const styles = StyleSheet.create({
     borderColor: '#ddd',
     fontSize: 18,
     paddingLeft: 22,
+    color: '#151B17',
   },
   cityInput: {
     width: '100%',
@@ -272,6 +267,7 @@ const styles = StyleSheet.create({
     borderColor: '#ddd',
     fontSize: 18,
     paddingLeft: 22,
+    color: '#151B17',
   },
   dateInput: {
     width: '100%',
@@ -286,6 +282,7 @@ const styles = StyleSheet.create({
     paddingLeft: 22,
     display: 'flex',
     textAlignVertical:'center',
+    color: '#151B17',
   },
   buttonContainer: {
     width: '100%',

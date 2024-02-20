@@ -194,6 +194,7 @@ const styles = StyleSheet.create({
     borderColor: '#ddd',
     fontSize: 18,
     paddingLeft: 22,
+    color: '#151B17',
   },
   cityInput: {
     width: '100%',
@@ -208,6 +209,7 @@ const styles = StyleSheet.create({
     borderColor: '#ddd',
     fontSize: 18,
     paddingLeft: 22,
+    color: '#151B17',
   },
   dateInput: {
     width: '100%',
@@ -222,6 +224,7 @@ const styles = StyleSheet.create({
     paddingLeft: 22,
     display: 'flex',
     textAlignVertical:'center',
+    color: '#151B17',
   },
   buttonContainer: {
     width: '100%',
@@ -233,7 +236,7 @@ const styles = StyleSheet.create({
     borderRadius: 50,
     marginVertical: 10,
     position: 'absolute',
-    bottom: 48,
+    bottom: 64,
   },
   buttonText: {
     fontSize: 18,

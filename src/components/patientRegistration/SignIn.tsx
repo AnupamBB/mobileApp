@@ -85,6 +85,7 @@ const styles = StyleSheet.create({
     borderColor: '#ddd',
     fontSize: 18,
     paddingLeft: 22,
+    color: '#151B17',
   },
   buttonContainer: {
     width: '100%',
