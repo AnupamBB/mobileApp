@@ -46,13 +46,13 @@ const Profile: React.FC = () => {
                 style={styles.profileImage}
                 source={require('../../assets/images/ellipse-19.png')}
               />
-              {profileData.map((user: any) => (
-                <View key={user.id} style={styles.profileTextContainer}>
-                  <Text style={styles.profileNameText}>{user.data.userData.registrationData.registrationData.firstName}</Text>
-                  <Text style={styles.profileDetailsText}>{user.data.userData.registrationData.registrationData.gender}</Text>
-                  <Text style={styles.profileDetailsText}>{user.data.userData.registrationData.registrationData.city}</Text>
+              {profileData.length > 0 && (
+                <View key={profileData[0].id} style={styles.profileTextContainer}>
+                  <Text style={styles.profileNameText}>{profileData[0].data.userData.registrationData.registrationData.firstName}</Text>
+                  <Text style={styles.profileDetailsText}>{profileData[0].data.userData.registrationData.registrationData.gender}</Text>
+                  <Text style={styles.profileDetailsText}>{profileData[0].data.userData.registrationData.registrationData.city}</Text>
                 </View>
-              ))}
+              )}
             </View>
             <View style={styles.profileDetailsContainer}>
               {profileData.length > 0 && (
