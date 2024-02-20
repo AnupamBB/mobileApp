@@ -172,7 +172,6 @@ const CareSupport = ({ navigation }: CareSupportProps) => {
         });
       }}
       />
-      </ScrollView>
       <TouchableOpacity
         onPress={nextpage}
         style={styles.buttonContainer}
@@ -180,6 +179,7 @@ const CareSupport = ({ navigation }: CareSupportProps) => {
         <Text style={styles.buttonText}>Next</Text>
         <Image source={require('../../../assets/photos/arrow.png')} />
       </TouchableOpacity>
+      </ScrollView>
     </View>
   );
 };
@@ -237,7 +237,6 @@ const styles = StyleSheet.create({
     borderColor: '#ddd',
     fontSize: 18,
     paddingLeft: 22,
-    marginBottom: 128,
   },
   cityInput: {
     width: '100%',
@@ -262,8 +261,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     borderRadius: 50,
     marginVertical: 10,
-    position: 'absolute',
-    bottom: 0,
+    marginBottom: 288,
   },
   buttonText: {
     fontSize: 18,
