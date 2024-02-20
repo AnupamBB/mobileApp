@@ -70,7 +70,7 @@ const styles = StyleSheet.create({
     textAlign: 'left',
     fontSize: 16,
     fontWeight: '600',
-    color: '#7d7c83',
+    color: '#8B8993',
   },
   inputHeadingResendCode: {
     fontFamily: 'Lato-Regular',
@@ -97,6 +97,7 @@ const styles = StyleSheet.create({
     borderColor: '#ddd',
     fontSize: 18,
     paddingLeft: 22,
+    color: '#151B17',
   },
   buttonContainer: {
     width: '100%',
@@ -108,7 +109,7 @@ const styles = StyleSheet.create({
     borderRadius: 50,
     marginVertical: 10,
     position: 'absolute',
-    bottom: 48,
+    bottom: 64,
   },
   buttonText: {
     fontSize: 18,

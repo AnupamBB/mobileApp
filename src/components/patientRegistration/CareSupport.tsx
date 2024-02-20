@@ -224,6 +224,7 @@ const styles = StyleSheet.create({
     borderColor: '#ddd',
     fontSize: 18,
     paddingLeft: 22,
+    color: '#151B17',
   },
   nurseInput: {
     width: '100%',
@@ -237,6 +238,7 @@ const styles = StyleSheet.create({
     borderColor: '#ddd',
     fontSize: 18,
     paddingLeft: 22,
+    color: '#151B17',
   },
   cityInput: {
     width: '100%',
@@ -251,6 +253,7 @@ const styles = StyleSheet.create({
     borderColor: '#ddd',
     fontSize: 18,
     paddingLeft: 22,
+    color: '#151B17',
   },
   buttonContainer: {
     width: '100%',
@@ -269,7 +272,6 @@ const styles = StyleSheet.create({
     color: '#fff',
   },
   dropdowncontainer: {
-
   },
   dropdown: {
       fontWeight: 'bold',
@@ -283,6 +285,7 @@ const styles = StyleSheet.create({
       width: '100%',
       fontSize: 18,
       paddingLeft: 22,
+      color: '#151B17',
     },
 });
 
